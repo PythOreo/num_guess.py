@@ -1,20 +1,16 @@
 from random import choice
 comp = choice(range(1, 50))
-x = 0
-def print_msg(msg): 
-    print(msg)   
+tries = 0  
 while True:
     try: 
-        player = int(input("Please input a num in the range of 50: ")) 
+        player = int(input("Please input a num in the range of 50: "))
+        tries += 1
         if player > comp: 
-            print_msg("Your choice is bigger")
-            x += 1
+            print("Your choice is bigger")
         elif player < comp: 
-            print_msg("Your choice is smaller") 
-            x += 1
+            print("Your choice is smaller") 
         else: 
-            x += 1
-            print(f"Bingo! You choosed the correct num in {x} tries")
+            print(f"Bingo! You choosed the correct num in {tries} tries")
             break
     except ValueError: 
         print("Please input a number")
